@@ -26,7 +26,7 @@ interface ChatSenderMsgProps {
 }
 
 const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 1024px)");
   console.log(isMobile);
 
   return data.msgType === "text" ? (
@@ -113,7 +113,7 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
             </ContextMenu>
           </div>
         </div>
-        <div className="items-center hidden md:flex">
+        <div className="items-center hidden lg:flex">
           <Button variant="ghost" size="sm">
             <EmojiSmileIcon />
           </Button>
