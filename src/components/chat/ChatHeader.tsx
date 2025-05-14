@@ -48,7 +48,7 @@ const ChatHeader = () => {
           </Badge>
         </div>
       </div>
-      <div className="px-8 pb-4 flex items-center justify-between border-b border-border">
+      <div className="flex items-center justify-between border-b border-border pb-4 px-4 md:px-8 lg:px-16">
         <div className="flex items-center gap-2">
           <div>
             <Heading as="h5" className="font-bold">
