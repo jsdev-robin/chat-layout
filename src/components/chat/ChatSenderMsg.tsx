@@ -8,9 +8,9 @@ import EmojiSmileIcon from "../ui/EmojiSmileIcon";
 import {
   ContextMenu,
   ContextMenuContent,
-  ContextMenuItem,
   ContextMenuTrigger,
 } from "../ui/context-menu";
+import { useMediaQuery } from "../../hooks/use-media-query";
 
 interface ChatSenderMsgProps {
   data: {
@@ -26,6 +26,8 @@ interface ChatSenderMsgProps {
 }
 
 const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return data.msgType === "text" ? (
     <div className="w-full space-y-1.5">
       <Text variant="sm" textColor="muted" className="text-center">
@@ -60,7 +62,10 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
               {data.isOnline && <Onlineindicator />}
             </div>
             <ContextMenu>
-              <ContextMenuTrigger className="w-full" disabled>
+              <ContextMenuTrigger
+                className="w-full"
+                disabled={isMobile ? false : true}
+              >
                 <div className="bg-muted p-4 rounded-md rounded-bl-none flex-1">
                   <Text variant="sm" weight="medium">
                     {data.msg}
@@ -92,10 +97,17 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
                 </div>
               </ContextMenuTrigger>
               <ContextMenuContent>
-                <ContextMenuItem>Profile</ContextMenuItem>
-                <ContextMenuItem>Billing</ContextMenuItem>
-                <ContextMenuItem>Team</ContextMenuItem>
-                <ContextMenuItem>Subscription</ContextMenuItem>
+                <div className="items-center hidden lg:flex">
+                  <Button variant="ghost" size="sm">
+                    <EmojiSmileIcon />
+                  </Button>
+                  <Button variant="ghost" size="sm">
+                    <MessageCircleMore />
+                  </Button>
+                  <Button variant="ghost" size="sm">
+                    <Ellipsis />
+                  </Button>
+                </div>
               </ContextMenuContent>
             </ContextMenu>
           </div>
