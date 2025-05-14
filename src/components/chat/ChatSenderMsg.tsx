@@ -5,6 +5,12 @@ import Text from "../ui/text";
 import { Button } from "../ui/button";
 import { Circle, Ellipsis, MessageCircleMore } from "lucide-react";
 import EmojiSmileIcon from "../ui/EmojiSmileIcon";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "../ui/context-menu";
 
 interface ChatSenderMsgProps {
   data: {
@@ -95,6 +101,15 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
             <Ellipsis />
           </Button>
         </div>
+        <ContextMenu>
+          <ContextMenuTrigger>Right click</ContextMenuTrigger>
+          <ContextMenuContent>
+            <ContextMenuItem>Profile</ContextMenuItem>
+            <ContextMenuItem>Billing</ContextMenuItem>
+            <ContextMenuItem>Team</ContextMenuItem>
+            <ContextMenuItem>Subscription</ContextMenuItem>
+          </ContextMenuContent>
+        </ContextMenu>
       </div>
     </div>
   );
