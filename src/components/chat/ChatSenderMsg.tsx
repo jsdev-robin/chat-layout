@@ -60,7 +60,7 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
               {data.isOnline && <Onlineindicator />}
             </div>
             <ContextMenu>
-              <ContextMenuTrigger>
+              <ContextMenuTrigger className="w-full" disabled>
                 <div className="bg-muted p-4 rounded-md rounded-bl-none flex-1">
                   <Text variant="sm" weight="medium">
                     {data.msg}
