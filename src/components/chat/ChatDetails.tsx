@@ -4,7 +4,7 @@ import TypingIndicator from "../ui/typing-indicator";
 
 const ChatDetails = () => {
   return (
-    <div className="flex flex-col-reverse overflow-y-auto p-4 gap-3 h-[calc(90vh-(var(--header-h)+var(--input-h)))]">
+    <div className="flex flex-col-reverse overflow-y-auto p-4 gap-3 h-[calc(100svh-(var(--header-h)+var(--input-h)))] lg:h-[calc(90svh-(var(--header-h)+var(--input-h)))]">
       <TypingIndicator />
       <ChatSenderMsg
         data={{
