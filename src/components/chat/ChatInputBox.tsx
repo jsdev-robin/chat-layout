@@ -1,8 +1,9 @@
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import { ChevronDown, Mic, Paperclip, Plus } from "lucide-react";
+import { ChevronDown, Mic, Plus } from "lucide-react";
 import { useAppContext } from "../../context/app-context";
+import EmojiSmileIcon from "../ui/EmojiSmileIcon";
 
 const ChatInputBox = () => {
   const { chatInputBoxRef } = useAppContext();
@@ -28,7 +29,7 @@ const ChatInputBox = () => {
               size="icon"
               className="text-muted-foreground"
             >
-              <Paperclip />
+              <EmojiSmileIcon />
             </Button>
             <Button
               variant="ghost"
