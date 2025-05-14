@@ -59,35 +59,45 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
               </Avatar>
               {data.isOnline && <Onlineindicator />}
             </div>
-            <div className="bg-muted p-4 rounded-md rounded-bl-none flex-1">
-              <Text variant="sm" weight="medium">
-                {data.msg}
-              </Text>
-              <div className="flex flex-col gap-1 mt-2">
-                <Button
-                  className="w-full justify-start !bg-background !border-0"
-                  variant="outline"
-                >
-                  <Circle className="fill-muted stroke-muted" />
-                  Pizza
-                </Button>
-                <Button
-                  className="w-full justify-start !bg-background !border-0"
-                  variant="outline"
-                >
-                  <Circle className="fill-muted stroke-muted" />
-                  Burgers
-                </Button>
-              </div>
-              <Text
-                variant="xs"
-                textColor="muted"
-                weight="medium"
-                className="text-right mt-2"
-              >
-                8 votes . Vote to see result
-              </Text>
-            </div>
+            <ContextMenu>
+              <ContextMenuTrigger>
+                <div className="bg-muted p-4 rounded-md rounded-bl-none flex-1">
+                  <Text variant="sm" weight="medium">
+                    {data.msg}
+                  </Text>
+                  <div className="flex flex-col gap-1 mt-2">
+                    <Button
+                      className="w-full justify-start !bg-background !border-0"
+                      variant="outline"
+                    >
+                      <Circle className="fill-muted stroke-muted" />
+                      Pizza
+                    </Button>
+                    <Button
+                      className="w-full justify-start !bg-background !border-0"
+                      variant="outline"
+                    >
+                      <Circle className="fill-muted stroke-muted" />
+                      Burgers
+                    </Button>
+                  </div>
+                  <Text
+                    variant="xs"
+                    textColor="muted"
+                    weight="medium"
+                    className="text-right mt-2"
+                  >
+                    8 votes . Vote to see result
+                  </Text>
+                </div>
+              </ContextMenuTrigger>
+              <ContextMenuContent>
+                <ContextMenuItem>Profile</ContextMenuItem>
+                <ContextMenuItem>Billing</ContextMenuItem>
+                <ContextMenuItem>Team</ContextMenuItem>
+                <ContextMenuItem>Subscription</ContextMenuItem>
+              </ContextMenuContent>
+            </ContextMenu>
           </div>
         </div>
         <div className="items-center hidden lg:flex">
@@ -101,15 +111,6 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
             <Ellipsis />
           </Button>
         </div>
-        <ContextMenu>
-          <ContextMenuTrigger>Right click</ContextMenuTrigger>
-          <ContextMenuContent>
-            <ContextMenuItem>Profile</ContextMenuItem>
-            <ContextMenuItem>Billing</ContextMenuItem>
-            <ContextMenuItem>Team</ContextMenuItem>
-            <ContextMenuItem>Subscription</ContextMenuItem>
-          </ContextMenuContent>
-        </ContextMenu>
       </div>
     </div>
   );
