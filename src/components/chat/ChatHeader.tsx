@@ -9,7 +9,10 @@ import { useAppContext } from "../../context/app-context";
 const ChatHeader = () => {
   const { ref } = useAppContext();
   return (
-    <div ref={ref}>
+    <div
+      ref={ref}
+      className="border-b border-border relative before:absolute before:w-20 before:h-0.5 before:bg-foreground before:-bottom-px before:left-0"
+    >
       <div className="flex items-center justify-between gap-4 p-4">
         <div className="flex items-center gap-2">
           <Button variant="ghost" className="text-muted-foreground">
@@ -48,7 +51,7 @@ const ChatHeader = () => {
           </Badge>
         </div>
       </div>
-      <div className="flex items-center justify-between border-b border-border pb-4 px-4 md:px-8 lg:px-16 relative before:absolute before:w-20 before:h-0.5 before:bg-foreground before:-bottom-px before:left-0 landscape:hidden lg:landscape:flex">
+      <div className="flex items-center justify-between pb-4 px-4 md:px-8 lg:px-16 landscape:hidden lg:landscape:flex">
         <div className="flex items-center gap-2">
           <div>
             <Heading as="h5" className="font-bold">
