@@ -84,7 +84,7 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="flex items-center">
+        <div className="items-center hidden lg:flex">
           <Button variant="ghost" size="sm">
             <EmojiSmileIcon />
           </Button>
