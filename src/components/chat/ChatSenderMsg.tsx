@@ -27,7 +27,6 @@ interface ChatSenderMsgProps {
 
 const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
   const isMobile = useMediaQuery("(max-width: 1024px)");
-  console.log(isMobile);
 
   return data.msgType === "text" ? (
     <div className="w-full space-y-1.5">
@@ -99,13 +98,13 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
               </ContextMenuTrigger>
               <ContextMenuContent>
                 <div className="items-center flex">
-                  <Button variant="ghost" size="sm">
+                  <Button variant="ghost" size="icon">
                     <EmojiSmileIcon />
                   </Button>
-                  <Button variant="ghost" size="sm">
+                  <Button variant="ghost" size="icon">
                     <MessageCircleMore />
                   </Button>
-                  <Button variant="ghost" size="sm">
+                  <Button variant="ghost" size="icon">
                     <Ellipsis />
                   </Button>
                 </div>
@@ -114,13 +113,13 @@ const ChatSenderMsg: React.FC<ChatSenderMsgProps> = ({ data }) => {
           </div>
         </div>
         <div className="items-center hidden lg:flex">
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="icon">
             <EmojiSmileIcon />
           </Button>
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="icon">
             <MessageCircleMore />
           </Button>
-          <Button variant="ghost" size="sm">
+          <Button variant="ghost" size="icon">
             <Ellipsis />
           </Button>
         </div>
